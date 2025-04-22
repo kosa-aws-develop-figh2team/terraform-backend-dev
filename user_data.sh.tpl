@@ -13,8 +13,8 @@ psql -h ${rds_endpoint} -U ${db_username} -d ${db_name} <<EOF
 CREATE EXTENSION IF NOT EXISTS vector;
 
 CREATE TABLE IF NOT EXISTS embeddings (
-    id UUID PRIMARY KEY,
-    service_id UUID NOT NULL,
+    id TEXT PRIMARY KEY,
+    service_id TEXT NOT NULL,
     source TEXT,
     content TEXT NOT NULL,
     embedding VECTOR(1536) NOT NULL,
