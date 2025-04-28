@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS embeddings (
     id TEXT PRIMARY KEY,
     service_id TEXT NOT NULL,
     content TEXT NOT NULL,
-    embedding VECTOR(1536) NOT NULL,
+    embedding VECTOR(1024) NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 EOF
