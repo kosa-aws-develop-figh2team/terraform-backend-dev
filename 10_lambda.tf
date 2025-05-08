@@ -1,10 +1,9 @@
 resource "aws_lambda_function" "preprocessing_service" {
   function_name = "preprocessing-service"
   role          = aws_iam_role.lambda_exec.arn
-  handler       = "main.lambda_handler"
-  runtime       = "python3.11"
-  filename      = "path/to/your/lambda_package.zip"
-  timeout       = 30
+  package_type  = "Image"
+  image_uri     = "${aws_ecr_repository.preprocessing_service.repository_url}:latest" 
+  timeout       = 300
 
   environment {
     variables = {
